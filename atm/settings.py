@@ -40,7 +40,10 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'accounts',
+    'users',
+]
 
 THIRD_PARTY_APPS = []
 
@@ -80,9 +83,9 @@ WSGI_APPLICATION = 'atm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse(os.getenv['DATABASE_URL'], conn_max_age=600)
-}
+DATABASES = dict()
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
