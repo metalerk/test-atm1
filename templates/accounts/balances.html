@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Balances
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="col l4 m12 s12 center">
+		<table class="highlight centered">
+        <thead>
+          <tr>
+              <th>Owner</th>
+              <th>Account Type</th>
+              <th>Balance</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for balance in queryset %}
+          <tr>
+            <td>{{ balance.owner }}</td>
+            <td>{{ balance.account_type }}</td>
+            <td>{{ balance.balance }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+	</div>
+</div>
+
+{% endblock %}

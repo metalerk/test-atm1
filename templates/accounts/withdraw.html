@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Withdraw
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col l4 m12 s12">
+			<form action="/withdraw_action/" method='POST'>
+				{% csrf_token %}
+				
+				<div class="input-field">
+		          <input placeholder="Account Number" name="account_number" id="account_number" type="text" class="validate">
+		          <label for="account_number">Account Number</label>
+		        </div>
+		        
+		        <div class="input-field inline">
+		          <input placeholder="Cantidad" name="qty" id="qty" type="text" class="validate">
+		          <label for="qty">Cantidad</label>
+		        </div>
+		          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+				    <i class="material-icons right">send</i>
+				  </button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
