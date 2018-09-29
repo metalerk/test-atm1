@@ -1,1 +1,1 @@
-web: gunicorn test-atm1.wsgi
+web: gunicorn atm.wsgi
